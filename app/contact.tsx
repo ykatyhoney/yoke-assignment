@@ -33,7 +33,9 @@ const Contact = () => {
 
     const init = async () => {
         try {
-            const { data } = await axios.get(process.env.API_URL || "");
+            const { data } = await axios.get(
+                process.env.EXPO_PUBLIC_API_URL || ""
+            );
             setContacts(
                 data.contacts.map((c: Contact, id: any) => ({ ...c, id })) || []
             );
