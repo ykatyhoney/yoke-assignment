@@ -15,7 +15,7 @@ const Contact = () => {
     const init = async () => {
         try {
             const { data } = await axios.get(
-                "https://run.mocky.io/v3/2585c72f-6895-4e64-9433-45e6a95f0e39"
+                process.env.EXPO_PUBLIC_API_URL || ""
             );
             setContacts(data.contacts || []);
         } catch (err) {}
